@@ -6998,6 +6998,7 @@ nv.models.linePlusBarChart = function() {
     chart.y3Axis = y3Axis;
     chart.y4Axis = y4Axis;
     chart.tooltip = tooltip;
+    chart.brush = brush;
 
     chart.options = nv.utils.optionsFunc.bind(chart);
 
