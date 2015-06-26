@@ -5,7 +5,7 @@ nv.models.pieChart = function() {
     // Public Variables with Default Settings
     //------------------------------------------------------------
 
-    var pie = nv.models.pie();
+    var pie = nv.models.pie2();
     var legend = nv.models.legend();
     var tooltip = nv.models.tooltip();
 
