@@ -11124,6 +11124,7 @@ nv.models.pie2 = function() {
         labelSunbeamLayout: {get: function(){return labelSunbeamLayout;}, set: function(_){labelSunbeamLayout=_;}},
         donut:              {get: function(){return donut;}, set: function(_){donut=_;}},
         growOnHover:        {get: function(){return growOnHover;}, set: function(_){growOnHover=_;}},
+        keepSelected:        {get: function(){return keepSelected;}, set: function(_){keepSelected=_;}},
 
         // depreciated after 1.7.1
         pieLabelsOutside: {get: function(){return labelsOutside;}, set: function(_){
