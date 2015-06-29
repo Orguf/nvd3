@@ -13632,7 +13632,7 @@ nv.models.sunburst = function() {
                         .attrTween("d", arcTweenZoom(d));
 
                     dispatch.elementClick({
-                        data: d.data
+                        data: d
                     });
                 })
                 .each(stash)
@@ -13644,7 +13644,7 @@ nv.models.sunburst = function() {
                     }
 
                     dispatch.elementDblClick({
-                        data: d.data
+                        data: d
                     });
                 })
                 .each(stash)
