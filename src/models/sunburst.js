@@ -88,6 +88,10 @@ nv.models.sunburst = function() {
                     path.transition()
                         .duration(duration)
                         .attrTween("d", arcTweenZoom(d));
+
+                    dispatch.elementClick({
+                        data: d.data
+                    });
                 })
                 .each(stash)
                 .on("dblclick", function(d) {
@@ -96,6 +100,10 @@ nv.models.sunburst = function() {
                             .duration(duration)
                             .attrTween("d", arcTweenZoom(rootNode));
                     }
+
+                    dispatch.elementDblClick({
+                        data: d.data
+                    });
                 })
                 .each(stash)
                 .on('mouseover', function(d,i){
