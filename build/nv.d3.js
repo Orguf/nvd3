@@ -1,4 +1,4 @@
-/* nvd3 version 1.8.1 (https://github.com/novus/nvd3) 2015-06-29 */
+/* nvd3 version 1.8.1 (https://github.com/novus/nvd3) 2015-07-01 */
 (function(){
 
 // set up main nv object
@@ -6501,7 +6501,7 @@ nv.models.linePlusBarChart = function() {
         , y3
         , y4
         , noData = null
-        , dispatch = d3.dispatch('brush', 'stateChange', 'changeState')
+        , dispatch = d3.dispatch('brush', 'brushend', 'stateChange', 'changeState')
         , transitionDuration = 0
         , state = nv.utils.state()
         , defaultState = null
@@ -6774,6 +6774,10 @@ nv.models.linePlusBarChart = function() {
                 //.attr('y', -5)
                 .attr('height', availableHeight2);
             gBrush.selectAll('.resize').append('path').attr('d', resizePath);
+
+            brush.dispatch.on('brushend', function(){
+                dispatch.brushend();
+            });
 
             //============================================================
             // Event Handling/Dispatching (in chart's scope)
