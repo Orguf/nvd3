@@ -287,6 +287,9 @@ nv.models.linePlusBarChart = function() {
 
             // Setup Brush
             brush.x(x2).on('brush', onBrush);
+            brush.x(x2).on('brushend', function(){
+                dispatch.brushend();
+            });
 
             if (brushExtent) brush.extent(brushExtent);
 
@@ -315,9 +318,7 @@ nv.models.linePlusBarChart = function() {
                 .attr('height', availableHeight2);
             gBrush.selectAll('.resize').append('path').attr('d', resizePath);
 
-            brush.dispatch.on('brushend', function(){
-                dispatch.brushend();
-            });
+
 
             //============================================================
             // Event Handling/Dispatching (in chart's scope)
